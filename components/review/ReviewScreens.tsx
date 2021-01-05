@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRoutingInfo } from '../../routing';
 
-export const ReviewScreensRaw = () => {
+export const ReviewScreens = () => {
   const { stageKey } = useRoutingInfo();
   return (
     <>

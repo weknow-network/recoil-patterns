@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { guardString } from '../guards';
+import { JourneyType } from '../interfaces';
 import { IRoutingInfo } from './IRoutingInfo';
 
 export const useRoutingInfo = (): IRoutingInfo => {
@@ -10,8 +11,8 @@ export const useRoutingInfo = (): IRoutingInfo => {
   const journey = currentPath.substring(currentPath.lastIndexOf('/') + 1);
 
   return {
-    journey,
-    id: guardString(id) ? id : undefined,
+    journey: journey as JourneyType,
+    id: guardString(id) ? id : '',
     stageKey: guardString(stageKey) ? stageKey : undefined,
   };
 };

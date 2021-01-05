@@ -1,5 +1,7 @@
+import { JourneyType } from '../interfaces';
+
 export interface IRoutingInfo {
-  journey: string;
-  id?: string;
+  journey: JourneyType;
+  id: string;
   stageKey?: string;
 }

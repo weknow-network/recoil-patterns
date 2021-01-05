@@ -1,7 +1,7 @@
-import { stateCount, stateSize, stateProductId, stateColor } from '..';
-import { IRecoilId, IOrder } from './../../interfaces';
 import { selectorFamily, waitForAll } from 'recoil';
+import { stateColor, stateCount, stateProductId, stateSize } from '..';
 import { guardRecoilDefaultValue } from '../../guards';
+import { IOrder, IRecoilId } from '../../interfaces';
 import { stateOrderTracking } from '../tracking/state-order-tracking';
 
 /**
@@ -10,7 +10,7 @@ import { stateOrderTracking } from '../tracking/state-order-tracking';
  *
  * @description encapsulation of multiple disconnected state into single meaningful entity
  */
-export const stateProduct = selectorFamily<
+export const stateOrder = selectorFamily<
   IOrder,
   IRecoilId /* recoil family key */
 >({
