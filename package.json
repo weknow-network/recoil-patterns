@@ -1,0 +1,27 @@
+{
+  "name": "with-typescript",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc",
+    "export": "next build && next export && serve out -l 3001"
+  },
+  "dependencies": {
+    "next": "^10.0.3",
+    "npm-check-updates": "^10.2.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "recoil": "^0.1.2",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.10",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/styled-components": "^5.1.4",
+    "typescript": "^4.1.2"
+  },
+  "license": "MIT"
+}
