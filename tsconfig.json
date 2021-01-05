@@ -20,11 +20,5 @@
     "typeRoots": ["./typings", "./node_modules/@types/"]
   },
   "exclude": ["node_modules", "typings", "out", "server.js"],
-  "include": [
-    "**/*.js",
-    "**/*.ts",
-    "**/*.tsx",
-    "states/atoms/TrackPattern/postTrackingSelector.deprecated.ts_",
-    "interfaces/tracking/IPostNullable.ts_"
-  ]
+  "include": ["**/*.js", "**/*.ts", "**/*.tsx"]
 }

@@ -15,7 +15,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "prefer-arrow"],
   "extends": [
     "plugin:react/recommended",
     "airbnb",
@@ -31,6 +31,15 @@
   "rules": {
     "no-shadow": "off",
     "react/require-default-props": "off",
+
+    "prefer-arrow/prefer-arrow-functions": [
+      "error",
+      {
+        "disallowPrototype": true,
+        "singleReturnOnly": false,
+        "classPropertiesAllowed": false
+      }
+    ],
     "no-unused-vars": [
       "error",
       {
@@ -69,9 +78,10 @@
     "jsx-a11y/anchor-is-valid": "off",
 
     "react/no-unused-prop-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/no-use-before-define": "off",
+    "no-use-before-define": [0],
+    "@typescript-eslint/no-use-before-define": [1],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/camelcase": "off",
     "node/no-missing-import": "off",

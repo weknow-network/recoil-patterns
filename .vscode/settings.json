@@ -1,5 +1,143 @@
 {
-    "cSpell.words": [
-        "Serializable"
-    ]
+  "workbench.colorCustomizations": {
+    "tab.unfocusedActiveBorder": "#d1962a",
+    "quickInput.background": "#56565a",
+    "editor.selectionBackground": "#941c62",
+    // "editor.selectionHighlightBackground": "#941c6260",
+    "editor.wordHighlightBackground": "#660269",
+    "activeTabBackground": "#ff0000",
+    "activeTabActiveGroupForeground": "#0000ff",
+    "titleBar.activeBackground": "#1b181ac3",
+    "titleBar.activeForeground": "#fff6ffc3",
+    "editor.foldBackground": "#1f202066"
+  },
+  "cSpell.words": [
+    "AIIA",
+    "AMTI",
+    "APAC",
+    "BLOS",
+    "Bnaya",
+    "CBRM",
+    "COMMINT",
+    "DTOs",
+    "Datalink",
+    "Deutsch",
+    "Disptch",
+    "ELINT",
+    "GMTI",
+    "Gilroy",
+    "ISTAR",
+    "Know’s",
+    "Nadav",
+    "OSINT",
+    "WAMI",
+    "WAPS",
+    "Weknow's",
+    "alon",
+    "antd",
+    "autofit",
+    "baty",
+    "brainer",
+    "callout",
+    "camelcase",
+    "checkmark",
+    "chps",
+    "clickaway",
+    "clsx",
+    "containerheight",
+    "containerwidth",
+    "cssprop",
+    "devtools",
+    "dropzone",
+    "eqeqeq",
+    "esnext",
+    "evdosin",
+    "flowtype",
+    "focusable",
+    "gtag",
+    "icofont",
+    "imgfnc",
+    "inear",
+    "jsondiffpatch",
+    "khtml",
+    "linkedin",
+    "logrocket",
+    "middlewares",
+    "minmax",
+    "nadav",
+    "nextjs",
+    "nowrap",
+    "ofir",
+    "pageview",
+    "persistor",
+    "plusplus",
+    "raban",
+    "readonly",
+    "roboto",
+    "scroller",
+    "sdks",
+    "splitted",
+    "stylelint",
+    "subcomponents",
+    "subobjectives",
+    "swal",
+    "sweetalert",
+    "tabindex",
+    "toastify",
+    "topbar",
+    "unfetch",
+    "ungroup",
+    "uuidv",
+    "vivus",
+    "vmin",
+    "weknow",
+    "wifi",
+    "wsize"
+  ],
+  "cSpell.ignorePaths": [
+    "**/package-lock.json",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/**",
+    ".vscode",
+    "typings",
+    "/public/static/de/**",
+    "/public/static/he/**"
+  ],
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "editor.formatOnSave": true,
+  "debug.javascript.warnOnLongPrediction": false
 }
