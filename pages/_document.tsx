@@ -1,32 +1,32 @@
-import Document, { Head, Html, Main, NextScript } from 'next/document';
+import { AppType } from 'next/dist/next-server/lib/utils';
+import Document, {
+  DocumentContext,
+  Head,
+  Main,
+  NextScript,
+} from 'next/document';
 import React from 'react';
 import { ServerStyleSheet } from 'styled-components';
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: any) {
-    // Step 1: Create an instance of ServerStyleSheet
+  static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
     try {
-      // Step 2: Retrieve styles from components in the page
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App: any) => (props: any) =>
+          enhanceApp: (App: AppType) => (props) =>
             sheet.collectStyles(<App {...props} />),
         });
 
-      // Step 3: Extract the styles as <style> tags
-      const styleTags = sheet.getStyleElement();
-
-      // Step 4: Pass styleTags as a prop
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
         styles: (
           <>
             {initialProps.styles}
-            {styleTags}
+            {sheet.getStyleElement()}
           </>
         ),
       };
@@ -37,11 +37,25 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
-        <Head />
+      <>
+        <Head>
+          <meta
+            name="viewport"
+            content="width=device-width,maximum-scale=1.0,initial-scale=1"
+          />
+        </Head>
+        <link
+          rel="preload stylesheet"
+          as="style"
+          href="/Gilroy/stylesheet.css"
+        />
+        <link
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+          rel="stylesheet"
+        />
         <Main />
         <NextScript />
-      </Html>
+      </>
     );
   }
 }

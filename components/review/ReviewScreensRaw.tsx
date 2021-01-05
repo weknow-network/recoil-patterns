@@ -1,10 +1,11 @@
+import React from 'react';
 import { useRoutingInfo } from '../../routing';
 
-export const ReviewScreens = () => {
+export const ReviewScreensRaw = () => {
   const { stageKey } = useRoutingInfo();
   return (
     <>
-      {stageKey === 'select' && <h1>select</h1>}
+      {stageKey === undefined && <h1>select</h1>}
       {stageKey === 'show' && <h1>show</h1>}
       {stageKey === 'reviewer' && <h1>reviewer</h1>}
       {stageKey === 'rank' && <h1>rank</h1>}

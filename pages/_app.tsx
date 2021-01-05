@@ -1,8 +1,9 @@
-import { AppInitialProps } from "next/app";
-import React from "react";
-import GlobalStyle from "../components/GlobalStyle";
-import { RecoilRoot } from "recoil";
-const MyApp = ({ Component, pageProps }: AppInitialProps & any) => {
+import { AppInitialProps } from 'next/app';
+import React from 'react';
+import { RecoilRoot } from 'recoil';
+import GlobalStyle from '../components/GlobalStyle';
+
+const MyApp = ({ Component, pageProps }: AppInitialProps & unknown) => {
   return (
     <RecoilRoot>
       <GlobalStyle />

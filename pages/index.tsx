@@ -1,5 +1,6 @@
 import React from 'react';
+import { JourneySwitch } from '../components';
 
-const IndexPage = () => <div></div>;
+const IndexPage = () => <JourneySwitch />;
 
 export default IndexPage;
