@@ -1,12 +1,12 @@
 import { atomFamily } from 'recoil';
+import { IRecoilId } from '../../interfaces';
 
 /**
- * Represent count of specific product
+ * Represent count of specific product's order
  */
-export const stateSize = atomFamily<
-  number /* count */,
-  string /* the product id*/
->({
-  key: 'state-count',
-  default: 0,
-});
+export const stateCount = atomFamily<number, IRecoilId /* recoil family key */>(
+  {
+    key: 'state-count',
+    default: 0,
+  }
+);
