@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRoutingInfo } from '../../routing';
-import { Add } from './Add';
+import { Product } from '../Product';
 import { Continue } from './Continue';
 import { Details } from './Details';
 
@@ -8,8 +8,8 @@ export const OrderScreens = () => {
   const { stageKey } = useRoutingInfo();
   return (
     <>
-      {stageKey === undefined && <Add />}
-      {stageKey === 'add' && <Add />}
+      {stageKey === undefined && <Product />}
+      {stageKey === 'select' && <Product />}
       {stageKey === 'details' && <Details />}
       {stageKey === 'continue' && <Continue />}
     </>

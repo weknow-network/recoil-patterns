@@ -28,7 +28,7 @@ export const ContinueRaw = ({ className }: IWithClassName) => {
       <div className="entry">
         <h1>Count: {count}</h1>
       </div>
-      <div className="action" onClick={() => router.pushStage('add', true)}>
+      <div className="action" onClick={() => router.pushStage('select', true)}>
         Add
       </div>
       <div className="action" onClick={() => router.push('/')}>

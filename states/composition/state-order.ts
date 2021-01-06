@@ -14,7 +14,7 @@ export const stateOrder = selectorFamily<
   IOrder,
   IRecoilId /* recoil family key */
 >({
-  key: 'state-product',
+  key: 'state-order',
   get: (familyKey) => ({ get }) => {
     const { color, size, productId, count } = get(
       waitForAll({

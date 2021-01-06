@@ -28,7 +28,7 @@ export const ContinueRaw = ({ className }: IWithClassName) => {
       <Rating name="raring" value={stars} editing={false} />
       <p>{comment}</p>
       <div className="action" onClick={() => router.pushStage('select', true)}>
-        Add
+        Review other product
       </div>
       <div className="action" onClick={() => router.push('/')}>
         Exit

@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { IRecoilId, IWithClassName } from '../../../interfaces';
-import { IProduct } from '../../../proxies/IProduct';
-import { useFlowRouter, useRoutingInfo } from '../../../routing';
+import { IProductRef, IRecoilId, IWithClassName } from '../../interfaces';
+import { IProduct } from '../../proxies/IProduct';
+import { useFlowRouter, useRoutingInfo } from '../../routing';
 import {
   stateCachedProducts,
   stateProductId,
   stateTracking,
-} from '../../../states';
+} from '../../states';
 
-export const SelectRaw = ({ className }: IWithClassName) => {
+export const ProductRaw = ({ className }: IWithClassName) => {
   const router = useFlowRouter();
   const { id, journey } = useRoutingInfo();
   const key: IRecoilId = {
@@ -20,10 +20,6 @@ export const SelectRaw = ({ className }: IWithClassName) => {
   const setTracking = useSetRecoilState(stateTracking(journey));
   const products = useRecoilValue<IProduct[]>(stateCachedProducts);
 
-  useEffect(() => {
-    setTracking((prev) => (prev.includes(id) ? prev : [...prev, id]));
-  }, [id]);
-
   return (
     <div className={className}>
       <h1 className="title">Select Product</h1>
@@ -32,13 +28,24 @@ export const SelectRaw = ({ className }: IWithClassName) => {
           <div
             key={p.id}
             className={p.id === productId ? `prod selected` : 'prod'}
-            onClick={() => setProductId(p.id)}
+            onClick={() => {
+              setProductId(p.id);
+            }}
           >
             {p.title}
           </div>
         ))}
       </div>
-      <div className="next" onClick={() => router.pushStage('reviewer')}>
+      <div
+        className={productId === '' ? `next disable` : 'next'}
+        onClick={() => {
+          if (productId === '') return;
+          const key: IProductRef = { id, productId };
+          setTracking((prev) => (prev.includes(key) ? prev : [key, ...prev]));
+
+          router.pushStage('details');
+        }}
+      >
         Next
       </div>
     </div>

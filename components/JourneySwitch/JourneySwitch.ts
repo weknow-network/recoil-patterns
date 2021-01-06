@@ -9,12 +9,23 @@ export const JourneySwitch = styled(JourneyTypeRaw)`
   grid-column-gap: 4rem;
   height: 100vh;
 
+  .order,
+  .review {
+    display: grid;
+    grid-row-gap: 1rem;
+    grid-auto-flow: row;
+  }
+
   .order {
     grid-area: order;
   }
 
   .review {
     grid-area: review;
+  }
+
+  .item {
+    font-size: 2rem;
   }
 
   .btn {

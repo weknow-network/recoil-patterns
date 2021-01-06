@@ -9,5 +9,5 @@ export const stateProductId = atomFamily<
   IRecoilId /* recoil family key */
 >({
   key: 'state-title',
-  default: 'new product',
+  default: '',
 });

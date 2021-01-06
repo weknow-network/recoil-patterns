@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { AddRaw } from './AddRaw';
+import { ProductRaw } from './ProductRaw';
 
-export const Add = styled(AddRaw)`
+export const Product = styled(ProductRaw)`
   display: grid;
   justify-content: center;
   align-content: center;
@@ -29,5 +29,9 @@ export const Add = styled(AddRaw)`
     border-radius: 1rem;
     cursor: pointer;
     justify-self: start;
+
+    &.disable {
+      background: #777;
+    }
   }
 `;
