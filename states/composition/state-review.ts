@@ -1,8 +1,8 @@
-import { stateReviewer, stateStars, stateComment, stateProductId } from '..';
 import { selectorFamily, waitForAll } from 'recoil';
-import { IRecoilId, IReview } from '../../interfaces';
+import { stateComment, stateProductId, stateReviewer, stateStars } from '..';
 import { guardRecoilDefaultValue } from '../../guards';
-import { stateReviewTracking } from '../tracking/state-review-tracking';
+import { IRecoilId, IReview } from '../../interfaces';
+import { stateTracking } from '../tracking/state-tracking';
 
 /**
  * Abstract access to structured object of a product's review.
@@ -43,9 +43,7 @@ export const stateReview = selectorFamily<
       reset(stateProductId(familyKey));
 
       // remove from tracking
-      set(stateReviewTracking(journey), (prv) => [
-        ...prv.filter((m) => m !== id),
-      ]);
+      set(stateTracking(journey), (prv) => [...prv.filter((m) => m !== id)]);
 
       return;
     }
@@ -56,7 +54,7 @@ export const stateReview = selectorFamily<
     set(stateProductId(familyKey), value.productId);
 
     // track
-    set(stateReviewTracking(journey), (prv) => {
+    set(stateTracking(journey), (prv) => {
       // already exists
       if (prv.includes(id)) return prv;
       // add tracking

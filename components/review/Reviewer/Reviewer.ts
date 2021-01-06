@@ -1,25 +1,22 @@
 import styled from 'styled-components';
-import { AddRaw } from './AddRaw';
+import { ReviewerRaw } from './ReviewerRaw';
 
-export const Add = styled(AddRaw)`
+export const Reviewer = styled(ReviewerRaw)`
   display: grid;
   justify-content: center;
   align-content: center;
-  grid-row-gap: 1rem;
+  min-height: 100vh;
+  grid-auto-rows: max-content;
+  grid-row-gap: 1.5rem;
+  width: 100rem;
 
-  .options {
+  .reviewer {
     display: grid;
-    grid-auto-rows: auto;
-    grid-row-gap: 1rem;
+    grid-auto-flow: column;
+  }
 
-    .prod {
-      font-size: 1.5rem;
-      cursor: pointer;
-
-      &.selected {
-        font-weight: bold;
-      }
-    }
+  .reviewer-input {
+    font-size: 1.5rem;
   }
 
   .next {

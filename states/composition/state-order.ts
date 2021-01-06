@@ -2,7 +2,7 @@ import { selectorFamily, waitForAll } from 'recoil';
 import { stateColor, stateCount, stateProductId, stateSize } from '..';
 import { guardRecoilDefaultValue } from '../../guards';
 import { IOrder, IRecoilId } from '../../interfaces';
-import { stateOrderTracking } from '../tracking/state-order-tracking';
+import { stateTracking } from '../tracking/state-tracking';
 
 /**
  * Abstract access to structured object of a product's order.
@@ -43,9 +43,7 @@ export const stateOrder = selectorFamily<
       reset(stateCount(familyKey));
 
       // remove from tracking
-      set(stateOrderTracking(journey), (prv) => [
-        ...prv.filter((m) => m !== id),
-      ]);
+      set(stateTracking(journey), (prv) => [...prv.filter((m) => m !== id)]);
 
       return;
     }
@@ -56,7 +54,7 @@ export const stateOrder = selectorFamily<
     set(stateCount(familyKey), value.count);
 
     // track
-    set(stateOrderTracking(journey), (prv) => {
+    set(stateTracking(journey), (prv) => {
       // already exists
       if (prv.includes(id)) return prv;
       // add tracking

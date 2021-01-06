@@ -9,5 +9,5 @@ export const stateReviewer = atomFamily<
   IRecoilId /* recoil family key */
 >({
   key: 'state-reviewer',
-  default: 'new product',
+  default: '',
 });

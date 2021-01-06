@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background: #eee;
     font-family: Open-Sans, Helvetica, Sans-Serif;
+    min-height: 100vh;
   }
 `;
 

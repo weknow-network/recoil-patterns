@@ -7,7 +7,7 @@ import { useFlowRouter, useRoutingInfo } from '../../../routing';
 import { stateProductId } from '../../../states';
 import { stateTracking } from '../../../states/tracking/state-tracking';
 
-export const AddRaw = ({ className }: IWithClassName) => {
+export const SelectRaw = ({ className }: IWithClassName) => {
   const router = useFlowRouter();
   const { id, journey } = useRoutingInfo();
   const key: IRecoilId = {
@@ -41,7 +41,7 @@ export const AddRaw = ({ className }: IWithClassName) => {
           </div>
         ))}
       </div>
-      <div className="next" onClick={() => router.pushStage('details')}>
+      <div className="next" onClick={() => router.pushStage('reviewer')}>
         Next
       </div>
     </div>

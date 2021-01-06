@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { AddRaw } from './AddRaw';
+import { SelectRaw } from './SelectRaw';
 
-export const Add = styled(AddRaw)`
+export const Select = styled(SelectRaw)`
   display: grid;
   justify-content: center;
   align-content: center;
@@ -15,6 +15,9 @@ export const Add = styled(AddRaw)`
     .prod {
       font-size: 1.5rem;
       cursor: pointer;
+      background: lightpink;
+      padding: 0.7rem;
+      border-radius: 0.5rem;
 
       &.selected {
         font-weight: bold;

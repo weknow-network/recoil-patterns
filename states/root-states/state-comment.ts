@@ -9,5 +9,5 @@ export const stateComment = atomFamily<
   IRecoilId /* recoil family key */
 >({
   key: 'state-comment',
-  default: 'new product',
+  default: '',
 });
