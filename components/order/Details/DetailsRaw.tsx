@@ -12,15 +12,17 @@ export const DetailsRaw = ({ className }: IWithClassName) => {
     id,
     journey,
   };
-  const [color, setColor] = useRecoilState(stateColor(key));
-  const [size, setSize] = useRecoilState(stateSize(key));
+  // best practice (encapsulate state within component will result with less rendering)
+  const colorState = stateColor(key);
+  const sizeState = stateSize(key);
+  // bad practice (keeping the state at the global level will result in unnecessary rendering)
   const [count, setCount] = useRecoilState(stateCount(key));
 
   return (
     <div className={className}>
       <h1 className="title">Details</h1>
-      <ColorPicker className="color" value={color} setValue={setColor} />
-      <SizePicker className="size" value={size} setValue={setSize} />
+      <ColorPicker className="color" state={colorState} />
+      <SizePicker className="size" state={sizeState} />
       <div className="count">
         <h1>Count:</h1>
         <input

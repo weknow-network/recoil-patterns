@@ -1,7 +1,6 @@
-import { SetterOrUpdater } from 'recoil';
+import { RecoilState } from 'recoil';
 import { IWithClassName, Size } from '../../../interfaces';
 
 export interface ISizePickerProps extends IWithClassName {
-  value: Size;
-  setValue: SetterOrUpdater<Size>;
+  state: RecoilState<Size>;
 }

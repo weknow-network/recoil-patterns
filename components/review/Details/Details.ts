@@ -10,13 +10,6 @@ export const Details = styled(DetailsRaw)`
   grid-row-gap: 1.5rem;
   width: 100rem;
 
-  .raring {
-    display: grid;
-    font-size: 1.5rem;
-    align-content: stretch;
-    height: 4rem;
-  }
-
   .comment {
     display: grid;
     grid-auto-flow: column;
