@@ -34,5 +34,6 @@ export const JourneySwitch = styled(JourneyTypeRaw)`
     border: solid 0.2rem;
     border-radius: 1rem;
     cursor: pointer;
+    align-self: start;
   }
 `;

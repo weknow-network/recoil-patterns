@@ -11,6 +11,7 @@ export const Product = styled(ProductRaw)`
     display: grid;
     grid-auto-rows: auto;
     grid-row-gap: 1rem;
+    justify-content: start;
 
     .prod {
       font-size: 1.5rem;
@@ -18,6 +19,9 @@ export const Product = styled(ProductRaw)`
 
       &.selected {
         font-weight: bold;
+        color: blue;
+        border: solid 0.1rem;
+        padding: 0.1rem;
       }
     }
   }

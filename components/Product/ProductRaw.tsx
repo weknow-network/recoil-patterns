@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { IProductRef, IRecoilId, IWithClassName } from '../../interfaces';
+import { IRecoilId, IWithClassName } from '../../interfaces';
 import { IProduct } from '../../proxies/IProduct';
 import { useFlowRouter, useRoutingInfo } from '../../routing';
 import {
@@ -40,8 +40,7 @@ export const ProductRaw = ({ className }: IWithClassName) => {
         className={productId === '' ? `next disable` : 'next'}
         onClick={() => {
           if (productId === '') return;
-          const key: IProductRef = { id, productId };
-          setTracking((prev) => (prev.includes(key) ? prev : [key, ...prev]));
+          setTracking((prev) => (prev.includes(id) ? prev : [id, ...prev]));
 
           router.pushStage('details');
         }}

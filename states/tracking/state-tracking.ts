@@ -1,11 +1,11 @@
 import { atomFamily } from 'recoil';
-import { IProductRef, JourneyType } from '../../interfaces';
+import { JourneyType } from '../../interfaces';
 
 /**
  * Trace all active ids under specific journey type
  */
 export const stateTracking = atomFamily<
-  IProductRef[] /* ids */,
+  string[] /* ids */,
   JourneyType /* journey type */
 >({
   key: 'state-product-tracking',

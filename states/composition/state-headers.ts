@@ -1,6 +1,6 @@
 import { selectorFamily, waitForAll } from 'recoil';
-import { stateCachedProducts } from '..';
-import { IHeader, JourneyType } from '../../interfaces';
+import { stateCachedProducts, stateProductId } from '..';
+import { IHeader, IRecoilId, JourneyType } from '../../interfaces';
 import { stateTracking } from '../tracking';
 
 /**
@@ -13,17 +13,27 @@ export const stateHeaders = selectorFamily<
   JourneyType /* recoil family key */
 >({
   key: 'state-headers',
-  get: (familyKey) => ({ get }) => {
+  get: (journey) => ({ get }) => {
     const { tracking, products } = get(
       waitForAll({
-        tracking: stateTracking(familyKey),
+        tracking: stateTracking(journey),
         products: stateCachedProducts,
       })
     );
 
-    const hash = new Map<string, string>(
-      tracking.map((m) => [m.productId, m.id])
+    const pIds = get(
+      waitForAll(
+        tracking.map((id) => {
+          const key: IRecoilId = { journey, id };
+          // get the product it out of the atomic state
+          const pIdState = stateProductId(key);
+          return pIdState;
+        })
+      )
     );
+
+    // create index of  product id => order / review id
+    const hash = new Map<string, string>(tracking.map((m, i) => [pIds[i], m]));
 
     const headers: IHeader[] = products
       .filter((m) => hash.has(m.id))
