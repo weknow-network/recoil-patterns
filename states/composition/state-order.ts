@@ -34,9 +34,9 @@ export const stateOrder = selectorFamily<
     return product;
   },
   set: (familyKey) => ({ set, reset }, value) => {
-    // reset (when recoil's value is empty)
     const { journey, id } = familyKey;
 
+    // reset (when recoil's value is empty)
     if (guardRecoilDefaultValue(value)) {
       reset(stateProductId(familyKey));
       reset(stateColor(familyKey));
