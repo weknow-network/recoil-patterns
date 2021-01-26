@@ -8,7 +8,7 @@ export const SizePickerRaw = ({ className, state }: ISizePickerProps) => {
 
   return (
     <div className={className}>
-      <h1 className="title">Select color:</h1>
+      <h1 className="title">Select size:</h1>
 
       <div className="options">
         {Object.keys(Size).map((m) => (
